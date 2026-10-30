@@ -1,0 +1,161 @@
+{
+  "id": "com.opencode.midiformatssupport",
+  "name": "MidiFormatsSupport",
+  "version": "1.0.0",
+  "author": "opencode",
+  "description": "DAW-mode import for MIDI/RMI/XMF/KAR/MusicXML/ABC/MML, tracker modules (MOD/XM/IT/S3M/MPTM) and DAW projects (REAPER .rpp, Ableton .als, Tracktion/Waveform .tracktionedit, Renoise .xrns, LMMS .mmp, Rosegarden .rg, Ardour .ardour, Qtractor .qtr, DAWproject .dawproject, FL Studio .flp); exports MID/KAR/MusicXML. Import splits every source lane (MIDI channel, score part, voice, tracker channel, DAW track) into its own track, so an 18-voiced arrangement arrives as 18 tracks instead of one flattened piano roll.",
+  "icon": "icon.svg",
+  "sdk-version": "1.0",
+  "extensions": [
+    {
+      "type": "format",
+      "import-suffixes": ["mid", "midi", "kar", "rmi", "xf"],
+      "name": "MIDI (DAW import)",
+      "introduction": "Introduction.md",
+      "class": "MidiFormatsSupport.MidiFormat",
+      "assembly": "MidiFormatsSupport.dll"
+    },
+    {
+      "type": "format",
+      "import-suffixes": ["musicxml", "xml", "mxl"],
+      "name": "MusicXML",
+      "introduction": "Introduction.md",
+      "class": "MidiFormatsSupport.MusicXmlFormat",
+      "assembly": "MidiFormatsSupport.dll"
+    },
+    {
+      "type": "format",
+      "import-suffixes": ["abc"],
+      "name": "ABC notation",
+      "introduction": "Introduction.md",
+      "class": "MidiFormatsSupport.AbcFormat",
+      "assembly": "MidiFormatsSupport.dll"
+    },
+    {
+      "type": "format",
+      "import-suffixes": ["mml"],
+      "name": "Music Macro Language",
+      "introduction": "Introduction.md",
+      "class": "MidiFormatsSupport.MmlFormat",
+      "assembly": "MidiFormatsSupport.dll"
+    },
+    {
+      "type": "format",
+      "import-suffixes": ["mod", "xm", "it", "s3m", "mptm"],
+      "name": "Tracker modules",
+      "introduction": "Introduction.md",
+      "class": "MidiFormatsSupport.TrackerFormat",
+      "assembly": "MidiFormatsSupport.dll"
+    },
+    {
+      "type": "format",
+      "import-suffixes": ["rpp"],
+      "name": "REAPER project (DAW import)",
+      "introduction": "Introduction.md",
+      "class": "MidiFormatsSupport.RppFormat",
+      "assembly": "MidiFormatsSupport.dll"
+    },
+    {
+      "type": "format",
+      "import-suffixes": ["als"],
+      "name": "Ableton Live Set (DAW import)",
+      "introduction": "Introduction.md",
+      "class": "MidiFormatsSupport.AbletonFormat",
+      "assembly": "MidiFormatsSupport.dll"
+    },
+    {
+      "type": "format",
+      "import-suffixes": ["tracktionedit", "tracktion"],
+      "name": "Tracktion/Waveform edit (DAW import)",
+      "introduction": "Introduction.md",
+      "class": "MidiFormatsSupport.TracktionFormat",
+      "assembly": "MidiFormatsSupport.dll"
+    },
+    {
+      "type": "format",
+      "import-suffixes": ["xrns"],
+      "name": "Renoise song (DAW import)",
+      "introduction": "Introduction.md",
+      "class": "MidiFormatsSupport.RenoiseFormat",
+      "assembly": "MidiFormatsSupport.dll"
+    },
+    {
+      "type": "format",
+      "import-suffixes": ["mmp"],
+      "name": "LMMS project (DAW import)",
+      "introduction": "Introduction.md",
+      "class": "MidiFormatsSupport.LmmsFormat",
+      "assembly": "MidiFormatsSupport.dll"
+    },
+    {
+      "type": "format",
+      "import-suffixes": ["rg"],
+      "name": "Rosegarden project (DAW import)",
+      "introduction": "Introduction.md",
+      "class": "MidiFormatsSupport.RosegardenFormat",
+      "assembly": "MidiFormatsSupport.dll"
+    },
+    {
+      "type": "format",
+      "import-suffixes": ["ardour"],
+      "name": "Ardour session (DAW import)",
+      "introduction": "Introduction.md",
+      "class": "MidiFormatsSupport.ArdourFormat",
+      "assembly": "MidiFormatsSupport.dll"
+    },
+    {
+      "type": "format",
+      "import-suffixes": ["qtr"],
+      "name": "Qtractor session (DAW import)",
+      "introduction": "Introduction.md",
+      "class": "MidiFormatsSupport.QtractorFormat",
+      "assembly": "MidiFormatsSupport.dll"
+    },
+    {
+      "type": "format",
+      "import-suffixes": ["dawproject"],
+      "name": "DAWproject (DAW import)",
+      "introduction": "Introduction.md",
+      "class": "MidiFormatsSupport.DawProjectFormat",
+      "assembly": "MidiFormatsSupport.dll"
+    },
+    {
+      "type": "format",
+      "import-suffixes": ["flp"],
+      "name": "FL Studio project (DAW import)",
+      "introduction": "Introduction.md",
+      "class": "MidiFormatsSupport.FlpFormat",
+      "assembly": "MidiFormatsSupport.dll"
+    },
+    {
+      "type": "format",
+      "export-suffixes": ["mid", "midi"],
+      "name": "MID (export)",
+      "introduction": "Introduction.md",
+      "class": "MidiFormatsSupport.MidExportFormat",
+      "assembly": "MidiFormatsSupport.dll"
+    },
+    {
+      "type": "format",
+      "export-suffixes": ["kar"],
+      "name": "KAR (export)",
+      "introduction": "Introduction.md",
+      "class": "MidiFormatsSupport.KarExportFormat",
+      "assembly": "MidiFormatsSupport.dll"
+    },
+    {
+      "type": "format",
+      "export-suffixes": ["musicxml", "mxl"],
+      "name": "MusicXML (export)",
+      "introduction": "Introduction.md",
+      "class": "MidiFormatsSupport.MusicXmlExportFormat",
+      "assembly": "MidiFormatsSupport.dll"
+    }
+  ],
+  "localizations": {
+    "zh-CN": {
+      "name": "MIDI 格式增强支持",
+      "description": "以 DAW 模式导入 MIDI/RMI/XMF/KAR/MusicXML/ABC/MML 与 tracker 音轨格式（MOD/XM/IT/S3M/MPTM），以及 DAW 工程（REAPER .rpp / Ableton .als / Tracktion·Waveform .tracktionedit / Renoise .xrns / LMMS .mmp / Rosegarden .rg / Ardour .ardour / Qtractor .qtr / DAWproject .dawproject / FL Studio .flp），并可导出 MID/KAR/MusicXML。导入时按来源的每个声部（MIDI 通道 / 分谱声部 / 卷轨通道 / DAW 轨）各建一条轨，18 声部的编曲会得到 18 轨，而不是被压成一条钢琴卷帘。"
+    }
+  }
+}

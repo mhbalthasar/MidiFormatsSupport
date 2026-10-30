@@ -1,0 +1,50 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- TuneLab 插件层；SDK/Foundation 由宿主提供，路径用 TuneLabSdkRoot（默认 ..\TunelabExpermental）。 -->
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <RootNamespace>MidiFormatsSupport</RootNamespace>
+    <AssemblyName>MidiFormatsSupport</AssemblyName>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    <TuneLabSdkRoot Condition="'$(TuneLabSdkRoot)' == '' and '$(TUNELAB_SDK_ROOT)' != ''">$(TUNELAB_SDK_ROOT)</TuneLabSdkRoot>
+    <TuneLabSdkRoot Condition="'$(TuneLabSdkRoot)' == ''">$(MSBuildThisFileDirectory)..\TunelabExpermental</TuneLabSdkRoot>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- SDK 契约程序集：宿主提供，不随包分发 -->
+    <ProjectReference Include="$(TuneLabSdkRoot)\TuneLab.Foundation\TuneLab.Foundation.csproj" Private="false" />
+    <ProjectReference Include="$(TuneLabSdkRoot)\TuneLab.SDK\TuneLab.SDK.csproj" Private="false" />
+    <ProjectReference Include="MidiCore\MidiCore.csproj" />
+    <ProjectReference Include="DawCore\DawCore.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- 子项目与本地测试工程不参与本程序集编译 -->
+    <Compile Remove="MidiCore\**" />
+    <None Remove="MidiCore\**" />
+    <Content Remove="MidiCore\**" />
+    <Compile Remove="DawCore\**" />
+    <None Remove="DawCore\**" />
+    <Content Remove="DawCore\**" />
+    <Compile Remove="TestHarness\**" />
+    <None Remove="TestHarness\**" />
+    <Content Remove="TestHarness\**" />
+    <Compile Remove="packages\**" />
+    <None Remove="packages\**" />
+    <Content Remove="packages\**" />
+    <Compile Remove="tools\**" />
+    <None Remove="tools\**" />
+    <Content Remove="tools\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="manifest.json" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="Introduction.md" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>
